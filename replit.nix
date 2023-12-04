@@ -1,10 +1,11 @@
 { pkgs }: {
     deps = [
 
-        pkgs.nodejs-18_x
-        #pkgs.libwebp
+        pkgs.yarn
+         pkgs.nodejs-16_x
+        pkgs.libwebp
         pkgs.python
-	      pkgs.nodePackages.typescript
+        pkgs.nodePackages.typescript
         pkgs.libuuid
         pkgs.ffmpeg
         pkgs.imagemagick  
@@ -12,7 +13,7 @@
         pkgs.git
         pkgs.nodePackages.pm2
     ];
-  env ={
+  env = {
     LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [pkgs.libuuid];
   };
 }
